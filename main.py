@@ -23,8 +23,8 @@ if __name__ == "__main__":
 
 
     ###############################################################################
-    ##设置不同的迭代次数和隐因子个数，计算误差
-    ##无bias的情况
+    ##设置不同的迭代次数和隐因子个数，计算误差//set several iterations and number of latent factors
+    ##无bias的情况//with out bias
     l_mae_train,l_mse_train,l_mae_test,l_mse_test = [],[],[],[]
     l_factor = [2,10,50,100,200]
     for k_factor in l_factor:
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     df_error.columns = l_factor
     print(df_error)
 
-    ##有bias的情况
+    ##有bias的情况//with bias 
     l_mae_train,l_mse_train,l_mae_test,l_mse_test = [],[],[],[]
     l_factor = [2,10,50,100,200]
     for k_factor in l_factor:
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     df_error.columns = l_factor
     print(df_error)
     
-    ##作折线图，绘制不同factor数量下的误差
+    ##作折线图，绘制不同factor数量下的误差//make line chart（x:number of factors,y:error-mae and mse）
     import matplotlib.pyplot as plt
     '''
     x = l_factor
@@ -70,13 +70,13 @@ if __name__ == "__main__":
     y_mse_test = l_mse_test
     plt.plot(x, y_mse_train, marker='o', mec='r', mfc='w',label=u'train set')
     plt.plot(x, y_mse_test, marker='*', ms=10,label=u'test set')
-    plt.legend()  # 让图例生效
+    plt.legend()  # 让图例生效//for legend
     #plt.xticks(x, names, rotation=45)
     #plt.margins(0)
     plt.subplots_adjust(bottom=0.15)
-    plt.xlabel(u"num_factor") #X轴标签
-    plt.ylabel("mse") #Y轴标签
-    plt.title("LFM(bias)'s mse") #标题
+    plt.xlabel(u"num_factor") #X轴标签//label of x-axis
+    plt.ylabel("mse") #Y轴标签//label of y-axis
+    plt.title("LFM(bias)'s mse") #标题//title
     plt.show()
     '''
     
