@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 import scipy.sparse as sparse
 
-##定义函数将原始的dataframe转化成稀疏矩阵
+##定义函数将原始的dataframe转化成稀疏矩阵//def function to transform original dataframe to sparse matrix
 def df_to_mat(df_input,nb_users,nb_item):
     
     data = df_input.rating
@@ -21,7 +21,7 @@ def df_to_mat(df_input,nb_users,nb_item):
     return R
 
 
-##导入数据
+##导入数据//load data
 def load_data(path_train,path_test):
     
     ua_train = pd.read_table(path_train,sep=' ')
